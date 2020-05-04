@@ -22,9 +22,10 @@ public class LoginServlet extends HttpServlet {
 	}
 	
 	protected void doProc(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html;charset=utf-8"); // 데이터 타입은 html이고 utf-8 방식으로 문자처리
+		request.setCharacterEncoding("UTF-8"); // post일 경우 한글 처리 코드
 		String id = request.getParameter("id"); // 파라미터로 전송된 id를 저장
 		String passwd = request.getParameter("passwd"); // 파라미터로 전송된 passwd를 저장
-		response.setContentType("text/html;charset=utf-8"); // 데이터 타입은 html이고 utf-8 방식으로 문자처리
 		PrintWriter out = response.getWriter(); // 출력 스트림
 		out.println("아이디 : " + id + "<br />");
 		out.println("비밀번호 : " + passwd + "<br />");
