@@ -27,7 +27,9 @@ public class DogServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		String hide = request.getParameter("hide"); // 폼태그에서 넘어오는 데이터는 파라미터로 넘어온다. 이 때 name 속성은 키값이 된다.
 		out.println(hide);
-		String[] dogs = request.getParameterValues("dog");
+		// String[] hide = request.getParameterValues("hide");
+		// out.println(hide[0]);
+ 		String[] dogs = request.getParameterValues("dog"); // 동일 키로 여러 데이터가 넘어오면 배열로 전달된다.
 		out.println("<html>");
 		out.println("<head>");
 		out.println("<meta charset='utf-8' />");
