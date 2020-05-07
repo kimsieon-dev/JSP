@@ -7,14 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-		pageContext.setAttribute("pageScope", "pageValue");
-		request.setAttribute("requestScope", "requestValue");
-	%>
-	
+	<h3>결과 보기</h3>
+	<hr />
 	pageValue = <%=pageContext.getAttribute("pageScope") %><hr>
 	requestValue = <%=request.getAttribute("requestScope") %>
-	
-	<jsp:forward page="attributeTest5.jsp"></jsp:forward>
 </body>
 </html>
