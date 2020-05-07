@@ -2,7 +2,10 @@
     pageEncoding="UTF-8"%>
 <%request.setCharacterEncoding("UTF-8"); %>
 <jsp:useBean id="join" class="com.test.jsp.dto.JoinBean" />
+
+<%-- 자바빈의 필드명과 폼태그의 네임속성값이 동일하면 *로 모두 저장할 수 있다.  --%>
 <jsp:setProperty property="*" name="join" />
+
 <!DOCTYPE html>
 <html>
 <head>
