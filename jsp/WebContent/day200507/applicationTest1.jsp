@@ -28,10 +28,9 @@
 		<tr>
 			<td>웹 애플리케이션의 실제 파일시스템 경로</td>
 			<td>	
-				<%
-					String path = application.getRealPath("/");
-				%>
-				<%=path %></td>
+				<% String path = application.getRealPath("/"); %>
+				<%=path %>
+			</td>
 		</tr>
 		
 		<tr>
