@@ -21,6 +21,8 @@
 	<input type="button" onclick="location.href='sessionDel.jsp'" value="세션 값 삭제" />
 	<input type="button" onclick="location.href='sessionInvalidate.jsp'" value="세션 초기화" />
 	<h3><%=name %></h3>
+	<hr />
+	<h3><%=session.isNew() %></h3>
 
 </body>
 </html>
