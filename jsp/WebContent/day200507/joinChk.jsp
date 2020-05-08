@@ -5,6 +5,15 @@
 
 <%-- 자바빈의 필드명과 폼태그의 네임속성값이 동일하면 *로 모두 저장할 수 있다.  --%>
 <jsp:setProperty property="*" name="join" />
+<jsp:setProperty property="id" name="join" />
+<jsp:setProperty property="pass" name="join" />
+<jsp:setProperty property="name" name="join" />
+<jsp:setProperty property="sex" name="join" />
+<jsp:setProperty property="age" name="join" />
+
+<%-- form name 값이 다르면 param에 form name 값 입력 --%>
+<%-- 예를 들어 form name 값이 eamil2이면 param="eamil2" --%>
+<%-- <jsp:setProperty property="email" name="join" param="" /> --%>
 
 <!DOCTYPE html>
 <html>
