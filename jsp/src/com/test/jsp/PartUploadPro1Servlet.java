@@ -1,4 +1,4 @@
-package com.test.jsp.dto;
+package com.test.jsp;
 
 import java.io.IOException;
 import java.io.PrintWriter;
