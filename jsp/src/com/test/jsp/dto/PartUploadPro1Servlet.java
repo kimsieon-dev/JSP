@@ -20,28 +20,31 @@ import javax.servlet.http.Part;
 public class PartUploadPro1Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doProc(request, response);
-	}
-	
-protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doProc(request, response);
 	}
 
-protected void doProc(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	request.setCharacterEncoding("UTF-8");
-	String writer = request.getParameter("writer");
-	Part part = request.getPart("partFile1");
-	response.setContentType("text/html;charset=UTF-8");
-	PrintWriter out = response.getWriter();
-	String contentDisposition = part.getHeader("content-disposition");
-	String uploadFileName = getUploadFileName(contentDisposition);
-	part.write(uploadFileName);
-	out.println("작성자 " + writer + "님이 " + uploadFileName + " 파일을 업로드 하였습니다.");
-	
-}
-	
-private String getUploadFileName(String contentDisposition) {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doProc(request, response);
+	}
+
+	protected void doProc(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		String writer = request.getParameter("writer");
+		Part part = request.getPart("partFile1");
+		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		String contentDisposition = part.getHeader("content-disposition");
+		String uploadFileName = getUploadFileName(contentDisposition);
+		part.write(uploadFileName);
+		out.println("작성자 " + writer + "님이 " + uploadFileName + " 파일을 업로드 하였습니다.");
+
+	}
+
+	private String getUploadFileName(String contentDisposition) {
 		String uploadFileName = null;
 		String[] contentSplitStr = contentDisposition.split(";");
 		int firstQutoIndex = contentSplitStr[2].indexOf("\"");
